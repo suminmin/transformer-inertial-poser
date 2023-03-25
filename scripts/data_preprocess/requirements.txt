@@ -1,0 +1,7 @@
+untangle==1.1.1
+moviepy==1.0.3
+torchgeometry==0.1.2
+# chumpy==0.69
+
+defusedxml==0.6.0
+lxml==4.5.1

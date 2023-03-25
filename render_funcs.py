@@ -13,6 +13,12 @@ COLOR_GT = [0.1, 0.7, 0.1, 0.4]
 COLOR_TRANSPOSE = [1.0, 0.75, 0.8, 1.0]
 
 
+# DATA_PATH = "data"
+DATA_PATH = "../../data"
+AMASS_URDF_FILE = f"{DATA_PATH}/amass.urdf"
+TEXTURE_FILE = f"{DATA_PATH}/grid2_multi.png"
+
+
 def set_color(pb_c, body_id, base_color=None, specular_color=None):
     if base_color:
         for j in range(-1, pb_c.getNumJoints(body_id)):
@@ -54,7 +60,8 @@ def update_height_field_pb(pb_c, h_data: List[float], scale: float, terrainShape
     if terrainShape == -1:
         terrain = pb_c.createMultiBody(0, terrainShape2)
 
-        textureId = pb_c.loadTexture("data/grid2_multi.png")
+#         textureId = pb_c.loadTexture("data/grid2_multi.png")
+        textureId = pb_c.loadTexture(TEXTURE_FILE)
         pb_c.changeVisualShape(terrain, -1, textureUniqueId=textureId, rgbaColor=[1, 1, 1, 1])
         # pb_c.changeVisualShape(terrain, -1, rgbaColor=[1, 1, 1, 1])
 
@@ -169,7 +176,7 @@ def init_viz(_char_info,
 
     r1 = SimAgent(name='sim_agent_0',
                             pybullet_client=pb_c,
-                            model_file="data/amass.urdf",
+                            model_file=AMASS_URDF_FILE,
                             char_info=_char_info,
                             ref_scale=1.0,
                             self_collision=False,
@@ -196,7 +203,7 @@ def init_viz(_char_info,
     if compare_gt:
         r3 = SimAgent(name='sim_agent_1',
                                 pybullet_client=pb_c,
-                                model_file="data/amass.urdf",
+                                model_file=AMASS_URDF_FILE,
                                 char_info=_char_info,
                                 ref_scale=1.0,
                                 self_collision=False,
