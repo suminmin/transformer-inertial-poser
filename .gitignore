@@ -1,4 +1,7 @@
-data/
+data/preprocessed*
+data/syn_*
+data/smplh/
+data/*.npy
 data/source/
 output/
 
