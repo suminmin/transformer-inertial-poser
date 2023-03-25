@@ -1,6 +1,6 @@
 [submodule "scripts/data_preprocess/dependencies/hps"]
 	path = scripts/data_preprocess/dependencies/hps
 	url = https://github.com/aymenmir1/hps.git
-[submodule "dependencies/transformer-inertial-poser"]
-	path = dependencies/transformer-inertial-poser
-	url = https://github.com/jyf588/transformer-inertial-poser.git
+[submodule "dependencies/fairmotion"]
+	path = dependencies/fairmotion
+	url = https://github.com/jyf588/fairmotion.git
